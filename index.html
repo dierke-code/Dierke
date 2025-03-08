@@ -253,14 +253,19 @@
             width: 90%;
             gap: 35px;
         }
+        .container a {
+            text-decoration: none; /* Ne legyen aláhúzott link */
+        }
         .box {
+            display: block; /* Teljes kattintható terület */
             background-color: rgba(0, 0, 0, 0.3);
             padding: 15px;
             position: relative;
             border-radius: 10px;
-            width: 20%; /* Csökkentett szélesség */
+            width: 20%;
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
             text-align: center;
+            color: white; /* Link szöveg színe */
         }
         .box:hover {
             transform: scale(1.05);
@@ -320,32 +325,77 @@
         .pp2{
             -webkit-text-stroke: 0.3px black;
         }
-        .casino {
-            position: relative;
-            display: inline-block;
-            text-decoration: none;
-            color: inherit;
-            overflow: hidden;
-        }
-        .casino {
-            text-decoration: none;
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            text-align: center;
-            width: 300px;
-            max-width: 300px;
-            color: white;
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-            overflow-wrap: break-word;
-            word-wrap: break-word;
-        }
         .profile iframe{
             position: absolute;
             right: 0;
 
+        }
+        .navbar {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .nav-item {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            margin-right: 20px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+
+        .nav-item i {
+            margin-right: 8px;
+        }
+
+        .nav-item:hover {
+            color: rgb(37, 170, 7);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background: rgba(0, 0, 0, 0.9);
+                position: absolute;
+                top: 84px;
+                left: 0;
+                right: 0;
+                padding: 15px 0;
+                z-index: 100;
+                opacity: 0;
+                transform: translateY(-10px);
+                transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+                visibility: hidden;
+            }
+            .navbar.active .nav-links {
+                opacity: 1;
+                transform: translateY(0);
+                visibility: visible;
+            }
+            .hamburger {
+                display: block;
+                cursor: pointer;
+                font-size: 30px;
+                color: white;
+                transition: transform 0.3s ease-in-out;
+            }
+            .hamburger.active {
+                transform: rotate(90deg);
+            }
         }
     </style>
 </head>
@@ -361,24 +411,22 @@
                 
         </div>
         <div class="container" id="container">
-                <div class="box">
-                    <img src="Betmatch2.jpg" alt="">
-                    <h2>Betmatch</h2>
-                    <p>Befizetési bónusz akár 300000 FT-ig + 600 ingyenes pörgetésig</p>
-                    <a href="https://bet-spot.online/9CF1h2dQ" target="_blank" class="button">LINK</a>
-                </div>
-                <div class="box">
-                    <img src="spinarium.png" alt="">
-                    <h2>Spinarium</h2>
-                    <p>200% befizetési bónusz 1000$-ig + 100 ingyenes pörgetés</p>
-                    <a href="https://spinarium.cc/de93a9a44" target="_blank" class="button">LINK</a>
-                </div>
-                <div class="box">
-                    <img src="Arcticbets.png" alt="" id="spoti">
-                    <h2 id="spotisz">Arcticbets</h2>
-                    <p>Alattam való regisztráció után használjátok a X1DDVD2F kódot 550% befizetési bónuszért (25x wager)</p>
-                    <a href="https://arcticbets.com/en?i=dierke16" target="_blank" class="button">LINK</a>
-                </div>
+            <a href="https://bet-spot.online/9CF1h2dQ" target="_blank" class="box">
+                <img src="Betmatch2.jpg" alt="">
+                <h2>Betmatch</h2>
+                <p>Befizetési bónusz akár 300000 FT-ig + 600 ingyenes pörgetésig</p>
+            </a>
+            
+            <a href="https://spinarium.cc/de93a9a44" target="_blank" class="box">
+                <img src="spinarium.png" alt="">
+                <h2>Spinarium</h2>
+                <p>200% befizetési bónusz 1000$-ig + 100 ingyenes pörgetés</p>
+            </a>
+            <a href="https://lgno.monvaki.com/?mid=255693_1499232" target="_blank" class="box">
+                <img src="legiano.jpg" alt="">
+                <h2>Legiano</h2>
+                <p>100% Befizetési bónusz akár 150 000 Ft-ig + 200 ingyenes pörgetés</p>
+            </a>
         </div>
 
         <div class="profile2">
